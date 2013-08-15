@@ -5,11 +5,12 @@ html
     link(rel='stylesheet', href='/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')
     link(rel='stylesheet', href='/css/font-awesome.css')
-    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/css/styles.css')
   body
     block content
     block scripts
       script(src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
-      script(src='/js/bootstrap.min.js')
-      script(src='/js/script.js')
-
+      script(src='/js/bootstrap.min.js')            
+      != js('/vendors/angular-1.2.0rc1/angular')
+      != js('/vendors/angular-extensions/angular-ui-router')
+      != js('/appname')      

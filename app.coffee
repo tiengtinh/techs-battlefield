@@ -5,6 +5,7 @@ FileRequire   = require('./config/require')
 fs            = require('fs')
 http          = require('http')
 https         = require('https')
+connectAssets = require('connect-assets')
 path          = require('path')
 AppRouter     = require('./app/routers/app_router')
 
@@ -22,6 +23,9 @@ app.configure ->
   app.use express.session(secret: 'INSERT YOUR SESSION KEY HERE!!!' )
   app.use express.logger('dev')
 
+  app.use connectAssets()
+  
+  app.use '/app', express.static(path.join(__dirname,'/public/app'))
   app.use '/js', express.static(path.join(__dirname,'/public/js'))
   app.use '/css', express.static(path.join(__dirname, '/public/css'))
   app.use '/img', express.static(path.join(__dirname, '/public/img'))

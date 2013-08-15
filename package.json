@@ -1,7 +1,7 @@
 {
   "name": "node_app",
   "version": "0.0.1",
-  "main": "app.js",
+  "main": "app.coffee",
   "repository": "",
   "author": "",
   "license": "MIT",
@@ -15,6 +15,7 @@
       "nconf"            : "*",
       "pkginfo"          : "*",
       "underscore"       : "*",
-      "underscore.string": "*"
+      "underscore.string": "*",
+      "connect-assets"   : "*"
     }
 }
