@@ -1,16 +1,13 @@
 doctype 5
-html
+html(ng-app='app')
   head
-    title=title
-    link(rel='stylesheet', href='/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')
-    link(rel='stylesheet', href='/css/font-awesome.css')
-    link(rel='stylesheet', href='/css/styles.css')
+    title=title        
+    != css('/styles/bootstrap/bootstrap')
+    != css('/styles/styles.css')
   body
-    block content
+    div.container(ui-view)
     block scripts
-      script(src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
-      script(src='/js/bootstrap.min.js')            
+      script(src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')                  
       != js('/vendors/angular-1.2.0rc1/angular')
-      != js('/vendors/angular-extensions/angular-ui-router')
-      != js('/appname')      
+      != js('/vendors/angular-extensions/angular-ui-router')      
+      != js('/client')      

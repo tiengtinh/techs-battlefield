@@ -6,7 +6,8 @@ class AppRouter
     @setupRoutes()
 
   setupRoutes: ->
-    new @app.controllers.AppController @app
+    new @app.controllers.ApiController @app
+    new @app.controllers.AppController @app    
 
 module.exports = AppRouter
 

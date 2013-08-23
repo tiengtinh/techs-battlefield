@@ -1,0 +1,16 @@
+$textColor: orange;
+
+h1 {
+	color: $textColor;
+}
+
+li {
+	font-size: 19px;
+	&.active {
+		font-weight: bold;
+	}
+}
+
+.btn-circle {
+	color: red;
+}

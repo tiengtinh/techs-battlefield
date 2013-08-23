@@ -24,14 +24,12 @@ app.configure ->
   app.use express.logger('dev')
 
   app.use connectAssets()
-  
-  app.use '/app', express.static(path.join(__dirname,'/public/app'))
-  app.use '/js', express.static(path.join(__dirname,'/public/js'))
-  app.use '/css', express.static(path.join(__dirname, '/public/css'))
-  app.use '/img', express.static(path.join(__dirname, '/public/img'))
 
-  app.set 'view engine', 'jade'
+  app.use '/styles', express.static(path.join(__dirname,'assets/styles'))
+
+  app.set 'view engine', 'jade'  
   app.set 'views', path.join(__dirname, "app/views")
+  app.locals.pretty = true;
   
 FileRequire.load app, 'controllers'
 

@@ -12,10 +12,11 @@
       "express"          : "*",
       "inflection"       : "*",
       "jade"             : "*",
+      "less"             : "*",
       "nconf"            : "*",
       "pkginfo"          : "*",
       "underscore"       : "*",
       "underscore.string": "*",
-      "connect-assets"   : "*"
+      "connect-assets"   : "*"      
     }
 }

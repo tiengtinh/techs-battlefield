@@ -1,0 +1,12 @@
+h1 {
+  color: orange; }
+
+li {
+  font-size: 19px; }
+  li.active {
+    font-weight: bold; }
+
+.btn-circle {
+  color: red; }
+
+/*# sourceMappingURL=styles.css.map */
