@@ -6,7 +6,28 @@ li {
   li.active {
     font-weight: bold; }
 
+html, body, .container {
+  height: 100%; }
+
+body {
+  background: url(../images/bg.jpg); }
+
 .btn-circle {
-  color: red; }
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 70px;
+  color: white;
+  height: 140px;
+  width: 140px; }
+  .btn-circle:hover {
+    background: rgba(255, 255, 255, 0.1); }
+  .btn-circle:active {
+    box-shadow: 0px 0px 2px 2px #ccc; }
+
+.jumbotron {
+  background: rgba(255, 255, 255, 0.2); }
+
+.btn-trans {
+  color: rgba(0, 0, 0, 0.1); }
 
 /*# sourceMappingURL=styles.css.map */

@@ -26,6 +26,8 @@ app.configure ->
   app.use connectAssets()
 
   app.use '/styles', express.static(path.join(__dirname,'assets/styles'))
+  app.use '/images', express.static(path.join(__dirname,'assets/images'))
+  app.use '/fonts', express.static(path.join(__dirname,'assets/fonts'))
 
   app.set 'view engine', 'jade'  
   app.set 'views', path.join(__dirname, "app/views")

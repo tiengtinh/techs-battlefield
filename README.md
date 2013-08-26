@@ -26,3 +26,4 @@ This, I created to mess with the technologies:
 - [ ] Db entites generator
 - [ ] different config for dev and pro mode
 - [ ] full-text-search mysql vs postagesql
+- [X] install LESS, LESS complie on save for sublime

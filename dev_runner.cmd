@@ -1,1 +1,1 @@
-nodemon
+nodemon --watch app.coffee --watch app/controllers --watch app/routers

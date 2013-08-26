@@ -1,0 +1,6 @@
+div(style='height: 80%;').row
+	div(gmap, ggl-map-url="{{address}}", style='height: 100%;').col-lg-6
+	div(gmap, ggl-map-url="{{address2}}", style='height: 100%;').col-lg-6
+br
+button.btn.btn-primary(ng-click='toggleAddress()') Change Address
+div {{address}}
