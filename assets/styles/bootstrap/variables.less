@@ -38,13 +38,17 @@
 
 // Typography
 // -------------------------
+@font-face {
+	font-family: "MyriadPro Light";
+	src: url("../../fonts/MyriadPro-Light.otf");
+}
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-serif:       Georgia, "Times New Roman", Times, serif;
-@font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
+@font-family-sans-serif:  "MyriadPro Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       "MyriadPro Light", Georgia, "Times New Roman", Times, serif;
+@font-family-monospace:   "MyriadPro Light", Monaco, Menlo, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
 
-@font-size-base:          14px;
+@font-size-base:          16px;
 @font-size-large:         ceil(@font-size-base * 1.25); // ~18px
 @font-size-small:         ceil(@font-size-base * 0.85); // ~12px
 
@@ -52,7 +56,7 @@
 @line-height-computed:    floor(@font-size-base * @line-height-base); // ~20px
 
 @headings-font-family:    @font-family-base;
-@headings-font-weight:    500;
+@headings-font-weight:    900;
 @headings-line-height:    1.1;
 
 // Iconography

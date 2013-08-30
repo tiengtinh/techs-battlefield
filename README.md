@@ -27,3 +27,7 @@ This, I created to mess with the technologies:
 - [ ] different config for dev and pro mode
 - [ ] full-text-search mysql vs postagesql
 - [X] install LESS, LESS complie on save for sublime
+- [X] google map directive with address changable
+	[X] gmap3.js
+- [ ] make a good validation directive base on this [How to Make Your Form Error Messages More Reassuring](http://uxmovement.com/forms/how-to-make-your-form-error-messages-more-reassuring/)
+- [ ] check out concepts, implementations from [AngularFun](https://github.com/CaryLandholt/AngularFun)

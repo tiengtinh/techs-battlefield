@@ -3,9 +3,9 @@
 #
 class ApiController
   constructor: (app) ->    
-    app.get "/api/test", @test       
+    app.get "/api/user/me", @user       
 
-  test: (req, res) ->
+  user: (req, res) ->
     res.json(
       name: 'Tinh',
       age: 22

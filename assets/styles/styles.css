@@ -10,24 +10,40 @@ html, body, .container {
   height: 100%; }
 
 body {
-  background: url(../images/bg.jpg); }
+  background: url(../images/TheYorkshireDesigner.png); }
 
 .btn-circle {
   background: transparent;
   border: 1px solid #fff;
   border-radius: 70px;
   color: white;
-  height: 140px;
-  width: 140px; }
+  height: 80px;
+  width: 80px; }
   .btn-circle:hover {
     background: rgba(255, 255, 255, 0.1); }
   .btn-circle:active {
     box-shadow: 0px 0px 2px 2px #ccc; }
+  .btn-circle.btn-lg {
+    height: 140px;
+    width: 140px; }
 
 .jumbotron {
   background: rgba(255, 255, 255, 0.2); }
 
 .btn-trans {
   color: rgba(0, 0, 0, 0.1); }
+
+.modal {
+  display: block; }
+  .modal .modal-content {
+    background: rgba(255, 255, 255, 0.2);
+    border: none; }
+    .modal .modal-content .modal-header .close {
+      opacity: 0.2;
+      margin-top: -12px;
+      font-size: 50px; }
+
+.btn {
+  border-radius: 10px; }
 
 /*# sourceMappingURL=styles.css.map */

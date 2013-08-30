@@ -16,7 +16,7 @@ html, body, .container {
 }
 
 body {
-	background: url(../images/bg.jpg)
+	background: url(../images/TheYorkshireDesigner.png)
 }
 
 .btn-circle {
@@ -24,14 +24,18 @@ body {
 	border: 1px solid #fff;
 	border-radius: 70px;		
 	color: white;
-	height: 140px;
-	width: 140px;	
+	height: 80px;
+	width: 80px;	
 	&:hover {
 		background: rgba(255,255,255, 0.1);
 	}
 	&:active {				
 		box-shadow: 0px 0px 2px 2px #ccc;
-	}			
+	}	
+	&.btn-lg {
+		height: 140px;
+		width: 140px;
+	}
 }
 
 .panel {
@@ -45,4 +49,24 @@ body {
 
 .btn-trans {
 	color: rgba(0, 0, 0, 0.1);
+}
+
+.modal {
+	display: block;
+	.modal-content {
+		background:rgba(255,255,255, 0.2);
+		border: none;		
+		.modal-header {
+			.close {				
+				opacity: 0.2;
+				margin-top: -12px;
+				font-size: 50px;
+			}	
+		}
+		
+	}
+}
+
+.btn {
+	border-radius: 10px;
 }
