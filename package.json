@@ -1,7 +1,7 @@
 {
   "name": "node_app",
   "version": "0.0.1",
-  "main": "app.coffee",
+  "main": "server.coffee",
   "repository": "",
   "author": "",
   "license": "MIT",
@@ -11,12 +11,16 @@
       "cookie"           : "*",
       "express"          : "*",
       "inflection"       : "*",
-      "jade"             : "*",
+      "ejs"              : "*",
       "less"             : "*",
       "nconf"            : "*",
       "pkginfo"          : "*",
       "underscore"       : "*",
       "underscore.string": "*",
-      "connect-assets"   : "*"      
+      "connect-assets"   : "*",      
+      "q"                : "*",
+      "underscore"       : "*",
+      "mysql"            : "2.0.0-alpha9",
+      "winston "         : "0.7.2" 
     }
 }

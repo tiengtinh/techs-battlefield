@@ -1,1 +1,1 @@
-nodemon --watch app.coffee --watch app/controllers --watch app/routers
+nodemon --watch server.coffee --watch server/app --watch config --watch server/app_controller.coffee
