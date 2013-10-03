@@ -1,4 +1,4 @@
-window.app.service('utils', [
+angular.module('app').service('utils', [
   '$timeout',
   ($timeout) ->
     @toParams = (url) ->

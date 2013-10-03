@@ -38,9 +38,14 @@ This, I created to mess with the technologies:
  - [X] [Well reads](http://stackoverflow.com/questions/2896207/connection-pooling-vs-per-thread-jdbc-connection)
 - [ ] nodejs synchronize function
 - [ ] structure: auto require all files and deep files in app folder
-- [ ] research node-threads-a-gogo & cluster => make nodejs run good, better performance
+- [ ] research node-threads-a-gogo & cluster = >make nodejs run good, better performance
 - [ ] base_service.coffee to have a common getInstance method
 - [ ] check single-threaded ability of Node. make a comsuming time function call and make another quick request to see if that quick request go throught
 - [ ] research Redis
 	- http://oldblog.antirez.com/post/take-advantage-of-redis-adding-it-to-your-stack.html
 - [ ] research expiration and capability of things like javascript numeral values, date, timestamp, ....
+- [ ] write my own image upload
+- [X] nodejs dependency injection
+	- https://github.com/vojtajina/node-di
+- [X] console log,info,... with color
+	- https://github.com/medikoo/cli-color

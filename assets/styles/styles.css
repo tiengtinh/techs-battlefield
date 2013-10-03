@@ -10,7 +10,8 @@ html, body, .container {
   height: 100%; }
 
 body {
-  background: url(../images/TheYorkshireDesigner.png); }
+  background: black;
+  /*background: url(../images/TheYorkshireDesigner.png); }*/
 
 .btn-circle {
   background: transparent;

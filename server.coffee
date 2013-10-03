@@ -1,45 +1,71 @@
 coffeeScript  = require('coffee-script')
 config        = require('./config').settings
 express       = require('express')
-AppLoader     = require('./config/app_loader')
-logger        = require('./config/logger')
+routes     = require('./config/server_routes')
 fs            = require('fs')
 http          = require('http')
 https         = require('https')
 connectAssets = require('connect-assets')
 path          = require('path')
-#AppRouter     = require('./app/routers/app_router')
-mysql         = require('mysql')
+clc           = require('cli-color')
+diap          = require('./../../diap/trunk')
 
 app = express()
 
 app.configure ->
-  app.set "port", config.port or process.env.PORT
+	app.set "port", config.port or process.env.PORT
 
-  app.use express.compress()
-  app.use express.bodyParser
-    uploadDir: path.join(__dirname,'/public/tmp')
-  app.use express.methodOverride()
-  app.use express.cookieParser()
+	app.use express.compress()
+	app.use express.bodyParser
+		uploadDir: path.join(__dirname,'/public/tmp')
+	app.use express.methodOverride()
+	app.use express.cookieParser()
+	app.use express.session(secret: 'INSERT YOUR SESSION KEY HERE!!!' )	
+	app.use connectAssets()
 
-  app.use express.session(secret: 'INSERT YOUR SESSION KEY HERE!!!' )
-  app.use express.logger('dev')
+	app.use '/styles', express.static(path.join(__dirname,'assets/styles'))
+	app.use '/images', express.static(path.join(__dirname,'assets/images'))
+	app.use '/fonts', express.static(path.join(__dirname,'assets/fonts'))
 
-  app.use connectAssets()
+	app.set 'view engine', 'jade'  
+	app.set 'views', path.join(__dirname, "server/views")	
 
-  app.use '/styles', express.static(path.join(__dirname,'assets/styles'))
-  app.use '/images', express.static(path.join(__dirname,'assets/images'))
-  app.use '/fonts', express.static(path.join(__dirname,'assets/fonts'))
+app.configure 'development', ->
 
-  app.set 'view engine', 'jade'  
-  app.set 'views', path.join(__dirname, "server/views")
-  app.locals.pretty = true;
+	t_log = console.log
+	console.log = ->
+		if arguments.length > 1
+			arguments[0] = clc.cyanBright.bold(arguments[0])
+		t_log.apply t_log, arguments
+		t_log '================================================'
+		t_log '' 
 
-app.logger = logger
+	app.use express.logger('dev')
+	app.locals.pretty = true
 
-new AppLoader(app, 'server/app')
+	console.log 'MODE', clc.red('development')
+
+app.configure 'production', -> 	
+
+	console.log 'MODE', clc.red('production')
+
+
+diap.setup(
+	app: app
+	scanFolders: [fs.realpathSync('./server/app')]
+	routes: routes
+	globalMiddlewares: 
+		whenNot:
+			public: (res, req, next) ->
+				console.log 'whenNot middleware'
+				next()
+)
+
+
+#injector = new AppLoader(app, 'server/app').injector
+#routes(app, injector)
 
 server = http.createServer(app).listen app.get('port'), ->
-  console.log "Express server listening on port #{app.get('port')}"  
+	console.log "Express server listening on port #{app.get('port')}"  
 
 #appRouter = new AppRouter(app)

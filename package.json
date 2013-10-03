@@ -21,6 +21,8 @@
       "q"                : "*",
       "underscore"       : "*",
       "mysql"            : "2.0.0-alpha9",
+      "di"               : "0.0.1",
+      "cli-color"        : "0.2.3",
       "winston "         : "0.7.2" 
     }
 }
