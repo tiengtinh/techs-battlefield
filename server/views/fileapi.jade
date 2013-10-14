@@ -1,0 +1,37 @@
+doctype 5
+html(ng-app='app')
+	head
+		title File Api
+		link(rel='stylesheet', href='/styles/jquery.Jcrop.min.css')
+		style.
+			
+	body		
+		
+		#userpic.userpic
+			.js-preview.userpic__preview
+			.btn.btn-success.js-fileapi-wrapper
+				.js-browse
+					span.btn-txt Choose
+					input(type='file', name='filedata')
+				.js-upload(style='display: none;')
+					.progress.progress-success
+						.js-progress.bar
+					span.btn-txt Uploading
+		hr
+
+		.cropper-wrapper
+			#cropper
+		input(type='button', value='upload', id='upload') 
+
+		script.
+			//- FileApi = {
+			//- 	debug: true
+			//- 	staticPath: '/vendors/fileapi/'
+			//- }
+		block scripts			
+			!= js('vendors/jquery-1.10.2')        
+			!= js('vendors/fileapi/FileApi')      
+			!= js('vendors/fileapi/FileAPI.exif')
+			!= js('vendors/fileapi/jquery.fileapi')
+			!= js('vendors/fileapi/jquery.Jcrop.min')
+			!= js('fileapi')

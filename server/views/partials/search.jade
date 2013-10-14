@@ -1,0 +1,7 @@
+ul
+	li(ng-repeat='row in searchSet', ng-bind-html='row')
+form(novalidate, ng-submit='search()')
+	input(text='text', name='query', ng-model='query')
+	button(type='submit') Search
+ul
+	li(ng-repeat='row in rows', ng-bind-html='row.highlighted')

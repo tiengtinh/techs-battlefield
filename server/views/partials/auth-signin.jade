@@ -1,0 +1,44 @@
+section.panel.ng-cloak
+	header.panel-heading.text-center {{ 'btn.login'}}
+	form.panel-body(method="post", name="loginForm", novalidate, ng-submit="doLogin()")
+		.alert.alert-danger.ng-cloak(ng-show="error")
+			button.close(data-dismiss='alert', type='button', ng-click="error = false")
+				i.icon-remove
+			i.icon-ban-circle
+			strong {{errorMessage}}
+		.form-group
+			input.form-control(type='text', placeholder="{{ 'label.usernameLong'}}",
+			 ng-model="login.username", name="username", init-focus,  required, ng-minlength="2", ng-maxlength="128",
+			 ng-class="{'parsley-error' : loginForm.username.$invalid && loginForm.username.$dirty}")
+			ul.parsley-error-list(ng-show="loginForm.username.$invalid && loginForm.username.$dirty", ng-cloak)
+				li.required(style='display: list-item;', 
+					ng-show="loginForm.username.$error.required") 
+					| {{ 'vld.mandatoryData'}}
+				li.required(style='display: list-item;', 
+					ng-show="loginForm.username.$error.minlength") 
+					| {{ 'vld.minLengthRequire'}}
+				li.required(style='display: list-item;', 
+					ng-show="loginForm.username.$error.maxlength") 
+					| {{ 'vld.maxLengthRestrict'}}
+
+		.form-group
+			input#inputPassword.form-control(type='password', placeholder="{{ 'label.password'}}",
+			 ng-model="login.password", name="password", required, ng-minlength="6", ng-maxlength="18",
+			 ng-class="{'parsley-error' : loginForm.password.$invalid && loginForm.password.$dirty}")
+			ul.parsley-error-list(ng-show="loginForm.password.$invalid && loginForm.password.$dirty", ng-cloak)
+				li.required(style='display: list-item;', 
+					ng-show="loginForm.password.$error.required") 
+					| {{ 'vld.mandatoryData'}}
+				li.required(style='display: list-item;', 
+					ng-show="loginForm.password.$error.minlength") 
+					{{ 'vld.minLengthRequire' }}
+				li.required(style='display: list-item;', 
+					ng-show="loginForm.password.$error.maxlength") 
+					{{ 'vld.maxLengthRestrict' }}
+		.checkbox
+			label
+				input(type='checkbox', ng-model="login.remember")
+				| {{ 'label.keepMeLoggedIn' }}
+		a.pull-right.m-t-xs(href='/auth/forgetpassword')
+			small {{ 'label.forgetPassword'}}
+		button.btn.btn-info(type='submit', ng-click='doLogin') {{ 'btn.login' }}

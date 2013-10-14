@@ -9,6 +9,7 @@ connectAssets = require('connect-assets')
 path          = require('path')
 clc           = require('cli-color')
 diap          = require('./../../diap/trunk')
+compress 	  = require 'node-jade-compress'
 
 app = express()
 
@@ -21,14 +22,19 @@ app.configure ->
 	app.use express.methodOverride()
 	app.use express.cookieParser()
 	app.use express.session(secret: 'INSERT YOUR SESSION KEY HERE!!!' )	
-	app.use connectAssets()
 
+	app.use connectAssets()
+	#app.use connectAssets(helperContext: {js: {root: 'javascript'}, css: {root: ''}})
+
+	app.use '/vendors', express.static(path.join(__dirname,'assets/vendors'))
 	app.use '/styles', express.static(path.join(__dirname,'assets/styles'))
 	app.use '/images', express.static(path.join(__dirname,'assets/images'))
 	app.use '/fonts', express.static(path.join(__dirname,'assets/fonts'))
 
 	app.set 'view engine', 'jade'  
 	app.set 'views', path.join(__dirname, "server/views")	
+
+	#compress.init {app: app, js_url: '/js', js_dir: 'assets/'}
 
 app.configure 'development', ->
 
@@ -53,19 +59,27 @@ app.configure 'production', ->
 diap.setup(
 	app: app
 	scanFolders: [fs.realpathSync('./server/app')]
-	routes: routes
+	#routes: routes
 	globalMiddlewares: 
 		whenNot:
-			public: (res, req, next) ->
-				console.log 'whenNot middleware'
-				next()
+			public: 'cookieController.checkRememberMe'
 )
-
-
-#injector = new AppLoader(app, 'server/app').injector
-#routes(app, injector)
 
 server = http.createServer(app).listen app.get('port'), ->
 	console.log "Express server listening on port #{app.get('port')}"  
 
-#appRouter = new AppRouter(app)
+###route = []
+class FlashController
+	constructor: (route) ->
+		route.push {
+			path: '/api/flash'
+			method: 'get'
+			run: ['getFlash']
+		}
+
+	getFlash: ->
+		console.log 'getFlash'
+
+flash = new FlashController(route)
+flash.getFlash()
+console.log route###

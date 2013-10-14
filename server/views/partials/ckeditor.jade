@@ -1,0 +1,15 @@
+br
+br
+br
+br
+form(name='editorForm')
+	div {{myText.length}}
+	div(contenteditable="true", ckeditor, ng-model='myText')
+	input(ng-model='myText', name='myText', ng-minlength="2", ng-maxlength="256")
+	//- textarea(ckeditor, ng-model='myText', name='myText', ng-minlength="2", ng-maxlength="256")
+	div(ng-show="editorForm.myText.$error.minlength") Min lenght
+	div(ng-show="editorForm.myText.$error.maxlength") max lenght
+button(ng-click='save()') Save
+button(ng-click='change()') Change Content
+//- div(contenteditable="true", ckeditor, ng-model='myText')
+	

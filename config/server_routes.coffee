@@ -1,4 +1,3 @@
-path = require 'path'
 routes = [	
 	{
 		path: '/api/user',
@@ -15,12 +14,14 @@ routes = [
 		]
 	}
 	{
-		path: '/partial/*',
+		path: '/partial/:name',
 		method: 'GET',
-		run: [ 			
+		run: [ 
+			(req, res, next) ->
+				console.log 'before partial'
+				next()
 			(req, res) ->
-				requestedView = path.join './', req.url
-				res.render(requestedView)
+				res.render('partials/' + req.params.name)
 		]
 		public: true
 	}

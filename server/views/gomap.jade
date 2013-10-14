@@ -1,0 +1,25 @@
+doctype 5
+html(ng-app='app')
+  head
+    title Map           
+    style.
+      #map {width: 700px; height: 400px;}
+      #map2 {width: 700px; height: 400px;}
+      #address {width: 500px}
+  body
+    input(type='text', id='address', value='Tan Son Nhat International Airport, phường 4, Tan Binh District, Ho Chi Minh City, Vietnam')
+    input(type='button', id='search1', value='Search Map 1')
+    input(type='button', id='search2', value='Search Map 2')
+    input(type='button', id='marker1', value='get Marker 1')
+    input(type='button', id='location', value='get Location 1')
+    #map
+    br
+    #map2
+    
+    script(src='http://maps.google.com/maps/api/js?sensor=false&libraries=places')
+    block scripts
+      
+      != js('vendors/jquery-1.10.2')        
+      != js('vendors/jquery.gomap-1.3.2')
+      != js('vendors/jquery.geocomplete')
+      != js('gomap-test')      

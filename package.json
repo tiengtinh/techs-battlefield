@@ -17,12 +17,16 @@
       "pkginfo"          : "*",
       "underscore"       : "*",
       "underscore.string": "*",
-      "connect-assets"   : "*",      
+      "connect-assets"   : "2.5.2",      
       "q"                : "*",
       "underscore"       : "*",
       "mysql"            : "2.0.0-alpha9",
       "di"               : "0.0.1",
       "cli-color"        : "0.2.3",
-      "winston "         : "0.7.2" 
+      "winston"         : "0.7.2",
+      "node-jade-compress" : "0.0.17",
+      "bignumber.js"    : "1.0.1",
+      "socket.io"       : "*",
+      "diap"            : "0.0.2"
     }
 }

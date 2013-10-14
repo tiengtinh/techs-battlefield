@@ -29,6 +29,7 @@ This, I created to mess with the technologies:
 - [X] install LESS, LESS complie on save for sublime
 - [X] google map directive with address changable
 	[X] gmap3.js
+	[X] gomap
 - [ ] make a good validation directive base on this [How to Make Your Form Error Messages More Reassuring](http://uxmovement.com/forms/how-to-make-your-form-error-messages-more-reassuring/)
 - [ ] check out concepts, implementations from [AngularFun](https://github.com/CaryLandholt/AngularFun)
 - [ ] Db mysql module, easy update, insert
@@ -44,7 +45,7 @@ This, I created to mess with the technologies:
 - [ ] research Redis
 	- http://oldblog.antirez.com/post/take-advantage-of-redis-adding-it-to-your-stack.html
 - [ ] research expiration and capability of things like javascript numeral values, date, timestamp, ....
-- [ ] write my own image upload
+- [X] write my own file upload
 - [X] nodejs dependency injection
 	- https://github.com/vojtajina/node-di
 - [X] console log,info,... with color
